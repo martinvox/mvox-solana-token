@@ -33,7 +33,7 @@ You can replace v1.9.0 with the release tag you want, or use one of the three sy
 
 ![image](https://user-images.githubusercontent.com/18686180/145827554-f29efe2b-938b-4151-b527-6e010d759729.png)
 
-Once finished, you'll have to logout and log back in in order to have the PATH variables updated in the shell. Once logged in, you can check your Solana version with:
+Once finished, you'll have to logout and log back in, in order to have the PATH variables updated in the shell. Once logged in, you can check your Solana version with:
 
 solana --version
 
@@ -57,5 +57,46 @@ You can check it out on the <a href="https://explorer.solana.com/address/B88mrEV
 
 ![image](https://user-images.githubusercontent.com/18686180/145830100-efc33a97-d851-4c33-b64a-fe647cd1a620.png)
 
+We will need some more stuff installed on the VM right now. First, do a sudo apt update to update the repos.
 
+After that we'll install Rust, the language that Solana uses in order to create and deploy tokens. To install it, copy and paste this command:
 
+curl https://sh.rustup.rs -sSf | sh
+
+We'll continue with the default installation since that is more than necessary.
+
+![image](https://user-images.githubusercontent.com/18686180/145863325-40bdfe99-7d9b-43b3-85d7-0b99504a2422.png)
+
+It will take a bit of time to get it done, but once finished you should see something similar to this:
+
+![image](https://user-images.githubusercontent.com/18686180/145863386-59e21aa2-4a5f-4744-8bc5-2943962225bb.png)
+
+Log out, and log back in to update the variables. Sane as last time.
+
+We need to install a few other prerequirements:
+* libudev-dev contains the files needed for developing applications that use libudev. 
+* libssl-dev is part of the OpenSSL project's implementation of the SSL and TLS cryptographic protocols for secure communication over the Internet. It contains development libraries, header files, and manpages for libssl and libcrypto. 
+
+You can install both with:
+* sudo apt install libudev-dev
+* sudo apt install libssl-dev pkg-config
+
+Last but not least you need build-essential (this was already preinstalled on WSL)
+
+* sudo apt install build-essential -y
+
+![image](https://user-images.githubusercontent.com/18686180/145864486-5212fa50-395e-4fab-98a0-69321e8e5bf1.png)
+
+Next step, <a href="https://spl.solana.com/token">install Solana's token program</a>. This is a CLI tool that will allows us to install a token in the Solana blockchain. To install it, run the following command with cargo (this is from Rust.)
+
+* cargo install spl-token-cli
+
+Once finished, you should see something like this
+
+![image](https://user-images.githubusercontent.com/18686180/145865720-0745f02f-f94b-4964-8364-f2019a61d8ef.png)
+
+Now, it is time to purchase some Solana and send it to your wallet that we created before. Mine is B88mrEVoLW9z5ZJsteF6VfKczL6genDi47AoeE3NYz2b. You can buy it from Binance, Coinbase and other several exchanges. Once you sent some Solana to that wallet, we can proceed to the fun part.
+
+Time to create the token. Good thing about Solana, is that everything is "pre-built" and with everything that we installed so far, you should be able to create your token with a simple command:
+
+* spl-token create-token
