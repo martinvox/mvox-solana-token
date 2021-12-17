@@ -153,4 +153,59 @@ One good practice, after you set up your supply and you have the amount of token
 
 ![image](https://user-images.githubusercontent.com/18686180/146584917-f7e66ad1-09fd-4d09-8762-2ff111f3835f.png)
 
-And that's it. Time to get rid of the unknown/unrecognized token situation.
+And that's it. Time to get rid of the unknown/unrecognized token situation, and we do this by adding it to the Solana Registry. For this, you will need:
+
+* A name
+* A symbol
+* A logo (try it to be less than 150KB)
+
+First part, is to create a repository in order to upload and store your logo. Go to your main page and click on Create repository or just go to this link https://github.com/new and upload your logo. 
+
+After you are done, you will have to get the raw url from the logo. You can just do it by simply clicking on your uploaded file to see it, and click on download. The copy the link that you will have on the top
+
+![image](https://user-images.githubusercontent.com/18686180/146599541-a1c83af2-7a47-4c78-9ad9-0dc69daccc57.png)
+
+Next step, navigate to the Solana Token list. This is where all the token in the Solana blockhain are listed, and if you want your token to this you will have to do a commit to it. The process is great since it is all automatic.
+
+Go into https://github.com/solana-labs/token-list and fork the repository on the top right.
+
+![image](https://user-images.githubusercontent.com/18686180/146599789-6d181969-2bce-4fbc-8fd7-75ebc47744e6.png)
+
+Once forked, you will have to navigate to the assets folder. Here, each folder represents every token that belong to the Solana Blockchain. In assets, we'll have to create a new folder and name it with our token address. You can do this really easy, by pressing the period Key on your button. This way, Github will load a web version of Visual Studio and it is easier to do this changes.
+
+![image](https://user-images.githubusercontent.com/18686180/146600770-1b8b785c-60c5-4234-901c-4bd773471b7c.png)
+
+After you create the folder that has your token, you will have to upload your logo inside the folder.
+
+![image](https://user-images.githubusercontent.com/18686180/146601179-fc530ef3-39ba-4c9c-b5e1-5f32049f8586.png)
+
+Now, navigate to src/tokens/solana.tokenlist.json. This is the registry of every token that is is in the Solana Blockchain, and where we are going to add our new token. For that, you can copy the syntax of a token that it is already there, and paste it on the bottom of the list.
+
+![image](https://user-images.githubusercontent.com/18686180/146603011-65fe140c-da29-4319-8b94-d269583648e9.png)
+
+I named it Pingüino Anarquista, based on a group of friends that I have. You can name it whatever you want. You will also need to change the address, symbol and logo URL with the raw link, from the logo you uploaded before.
+
+![image](https://user-images.githubusercontent.com/18686180/146603467-09d21e9e-abff-49a8-a0ed-63570e1f7368.png)
+
+Once you are done editing, you will have to commit the changes and check that they were added correctly to your repository.
+
+![image](https://user-images.githubusercontent.com/18686180/146604279-d83950b1-720d-41c6-a869-d08c1c557715.png)
+
+Final steps. Go back to the original Token List repository (https://github.com/solana-labs/token-list) and we will have to merge the changes that we just did to the main repository. Of course, they will have to accept it. If not, you will get a comment saying why. On the top, click on Pull requests:
+
+![image](https://user-images.githubusercontent.com/18686180/146604578-268f42f0-1206-49e5-bd64-f94bff016dbb.png)
+
+Click on new pull request and then on compare across forks
+
+![image](https://user-images.githubusercontent.com/18686180/146604703-fd1dde77-a7f7-4cd9-988b-7a60d42c79a2.png)
+
+![image](https://user-images.githubusercontent.com/18686180/146604749-f42e11bc-6e39-4933-933a-e606c6f62abc.png)
+
+
+
+
+
+
+
+
+
