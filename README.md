@@ -207,8 +207,11 @@ There, you will have to change the head repository to your own repository, and y
 
 After that, it is just a matter of time until the pull request gets accepted and processed. Then, you'll be able to see your token on any explorer with the proper name and logo.
 
+![image](https://user-images.githubusercontent.com/18686180/146618333-492dc78b-7b43-4859-b0a1-620607b8f360.png)
 
+Just a quick note about your new token. As of right now, the only way for people to acquire your new token is if you send some to them, so people can't actually buy this. In order for that to happen, the token needs to be part of an exchange and that is a huge different process, it might be a bit tricky and it does cost money, a bit more than you just used here. Setting it up on an exchange, creating a market and liquidity pools costs money, and is a long process. You can still do it, of course.
 
+With this you can say you have your own token, and you can send it to people.
 
 
 
