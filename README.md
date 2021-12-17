@@ -57,6 +57,9 @@ You can check it out on the <a href="https://explorer.solana.com/address/B88mrEV
 
 ![image](https://user-images.githubusercontent.com/18686180/145830100-efc33a97-d851-4c33-b64a-fe647cd1a620.png)
 
+![image](https://user-images.githubusercontent.com/18686180/146577618-daea2e29-395d-44c9-a1d5-5121c4579f45.png)
+
+
 We will need some more stuff installed on the VM right now. First, do a sudo apt update to update the repos.
 
 After that we'll install Rust, the language that Solana uses in order to create and deploy tokens. To install it, copy and paste this command:
@@ -100,3 +103,54 @@ Now, it is time to purchase some Solana and send it to your wallet that we creat
 Time to create the token. Good thing about Solana, is that everything is "pre-built" and with everything that we installed so far, you should be able to create your token with a simple command:
 
 * spl-token create-token
+
+![image](https://user-images.githubusercontent.com/18686180/146578680-089759ca-3508-4812-b598-fb20bf2c663f.png)
+
+Copy down the Token address, or you can get it later. We just created a token for in the Solana Blockchain, we now need to create an account in order to hold this tokens. To do it, type in the following
+
+* spl-token create-account TOKEN_ADDRESS
+
+![image](https://user-images.githubusercontent.com/18686180/146580379-9d7b0b19-e915-4f1b-969b-1d67a906d096.png)
+
+Now, you got your new account that is holding the token you just created. Next step, we have to fill that account with tokens by minting them. You can make as many tokens you want, or "print" as much as you want. Just type:
+
+* spl-token mint TOKEN_ADDRESS AMOUNT TOKEN_ACCOUNT_ADDRESS
+
+For my case this would be spl-token ApToJQDQ9awk5jaUhJd6ZUQ8f5mbwVtkhmHSoJojkpxc 5000 B9dC4eYzvXurrhAdMXtTiFafC6JUFciysGm9UDNEWrJH
+
+![image](https://user-images.githubusercontent.com/18686180/146580419-bcce212a-2cfc-4b2d-8800-22abb95c1739.png)
+
+If you type:
+
+* spl-tokens account
+
+You should see the token address list and the amount of tokens you actually minted
+
+![image](https://user-images.githubusercontent.com/18686180/146581176-9fca6aa7-a435-4b28-a6f3-ba6564184be1.png)
+
+Lets use and send some tokens to our wallet of preference. To do so:
+
+* spl-token transfer --fund-recipient --allow-unfunded-recipient ApToJQDQ9awk5jaUhJd6ZUQ8f5mbwVtkhmHSoJojkpxc 2000 HcG7HyhJF6oFiBGgAbBRwX8QGnyJc2Schtjtm9a9mYaM
+
+spl-token transfer --fund-recipient --allow-unfunded-recipient ApToJQDQ9awk5jaUhJd6ZUQ8f5mbwVtkhmHSoJojkpxc 2000 HcG7HyhJF6oFiBGgAbBRwX8QGnyJc2Schtjtm9a9mYaM
+
+![image](https://user-images.githubusercontent.com/18686180/146583346-7715390b-ec3b-4eb0-9efc-d5952dee1658.png)
+
+
+With this, you are transfering tokens from the token account that you created before, to the wallet you just created. Quick note, you will have to put in the parameters --fund-recipient in order for the wallet to receive the tokens and create an account for them, since it will not have one by default. --allow-unfunded-recipient does what it says, allow for this tokens to be sent even if you don't have an account.
+
+If you go to your wallet (I'm using Phantom Wallet) you can see that there is some unknown token. This is the token you just created and sent to your wallet
+
+![image](https://user-images.githubusercontent.com/18686180/146583532-b2b2e9f3-31f8-4e03-bf0b-a47a6bf01c4d.png)
+
+Now that we have our token and token account created, sent some to test, and checked that it is working; it is time to give it a name and assign the correct parameters for it. We can actually see everything on a Solana blockchain explorer like solscan.io or explorer.solana.com
+
+![image](https://user-images.githubusercontent.com/18686180/146584360-c6abcfdb-3618-4b79-9459-d29ef3c658a9.png)
+
+One good practice, after you set up your supply and you have the amount of tokens that you want on circulation, you'll have to run the following command to limit minting:
+
+* spl-token authorize TOKEN_ACCOUNT_ADDRESS mint --disable
+
+![image](https://user-images.githubusercontent.com/18686180/146584917-f7e66ad1-09fd-4d09-8762-2ff111f3835f.png)
+
+And that's it. Time to get rid of the unknown/unrecognized token situation.
