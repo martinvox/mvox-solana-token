@@ -201,8 +201,11 @@ Click on new pull request and then on compare across forks
 
 ![image](https://user-images.githubusercontent.com/18686180/146604749-f42e11bc-6e39-4933-933a-e606c6f62abc.png)
 
+There, you will have to change the head repository to your own repository, and you should have no issues in merging. If everything is correct, you should see a message saying able to merge
 
+![image](https://user-images.githubusercontent.com/18686180/146606030-be96bda1-869d-4742-b84e-6c54cebcc0b6.png)
 
+After that, it is just a matter of time until the pull request gets accepted and processed. Then, you'll be able to see your token on any explorer with the proper name and logo.
 
 
 
